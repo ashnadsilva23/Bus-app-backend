@@ -107,6 +107,20 @@ app.post("/login",(req,res)=>{
         )
     })
 
+    app.post("/delete",(req,res)=>{
+        let input=req.body
+        busmodel.findByIdAndDelete(input._id).then(
+            (response)=>{
+                res.json({"status":"success"})
+            }
+        ).catch(
+            (error)=>{
+                res.json({"status":"success"})
+            }
+        ).finally()
+        
+    
+    })
 
 app.listen(8080,()=>{
     console.log("server started")
